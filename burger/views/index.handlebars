@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <br>
+        <br>
+
+        <h1 id="burgerheader">Eat-Da-Burger</h1>
+
+        <img src="https://cdn.pixabay.com/photo/2012/04/14/15/37/cheeseburger-34315_960_720.png" alt="burger"> {{!-- loop through burger data --}}
+        <h2>Not Devoured!</h2>
+        <ul>
+            {{#each burgers}} {{#unless devoured}} {{> burgers/burgers-block devoured=true}} {{/unless}} {{/each}}
+        </ul>
+
+    </div>
+
+    <div>
+        <h2>Devoured!</h2>
+        <ul>
+            {{#each burgers}} {{#if devoured}} {{> burgers/burgers-block devoured=false}} {{/if}} {{/each}}
+        </ul>
+    </div>
+
+    {{!-- Add Burger --}}
+    <form class="create-form">
+
+        <div class="form-group">
+            <textarea name="burger_name" id="bur" placeholder="Enter a burger you want to eat then Click the Submit button."></textarea>
+        </div>
+        <button class="btn waves-effect waves-light orange pulse" type="submit" name="action">Submit Da Burger!
+        </button>
+
+    </form>
+
+</div>
+</div>
